@@ -1,12 +1,13 @@
 public class MemoryAllocation
 {
-    //package access-reachable by memory manager
-    //but not those that would use this module
-    String owner;  //which process owns this memory
-    long pos;      //where does it start
-    long len;      //how long is the memory
-
-
+    
+    String owner;  //owner of the memory
+    long pos;      //starting position of the memory
+    long len;      //length of the memory
+    MemoryAllocation prev;
+    MemoryAllocation next;
+    boolean free; //state of the memory whether it is free or not
+    MemoryManager manager;
 
     //You might want to add additional data/methods here
 
